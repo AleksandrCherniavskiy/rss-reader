@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { NotificationsListComponent } from './notifications-list/notifications-list.component';
 import { PreviewComponent } from './preview/preview.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChannelsComponent,
     NotificationsListComponent,
-    PreviewComponent
+    PreviewComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
