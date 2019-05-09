@@ -11,9 +11,9 @@ import { Item } from '../core/model/item';
 
 export class NotificationsListComponent implements OnInit {
 
-  private selectedNotification: Item;
-
   @Input() feed: ChannelResponse;
+
+  private selectedNotification: Item;
 
   constructor() { }
 
