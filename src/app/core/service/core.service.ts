@@ -4,7 +4,7 @@ import { HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import {ChannelResponse} from '../model/channel-response';
+import { ChannelResponse } from '../model/channel-response';
 
 @Injectable({
   providedIn: 'root'
