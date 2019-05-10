@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CoreService } from '../core/service/core.service';
 import { ChannelResponse } from '../core/model/channel-response';
 import { ChannelsList } from '../channels-list';
+import { DataTransferService } from '../core/service/data-transfer.service';
 
 @Component({
   selector: 'app-channels',
@@ -11,18 +12,26 @@ import { ChannelsList } from '../channels-list';
 })
 export class ChannelsComponent implements OnInit {
 
-  private response: ChannelResponse;
+  public response: ChannelResponse;
   private channelsList = ChannelsList;
 
-  constructor(private coreService: CoreService) {
+  constructor(private coreService: CoreService,
+              private service: DataTransferService) {
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getFeed(url: string) {
     this.coreService.getFeedContent(url).subscribe((response: ChannelResponse) => {
       this.response = response;
       console.log('response', this.response);
+      // send message to subscribers via observable subject
+      this.service.sendMessage(this.response);
     });
   }
+
+  /*sendMessage(): void {
+    // send message to subscribers via observable subject
+    this.service.sendMessage(this.response);
+  }*/
 }
