@@ -1,0 +1,10 @@
+<h2>List of channels</h2>
+
+<ul>
+  <li *ngFor="let channel of channelsList">
+    <button (click)="getFeed(channel.url)">{{channel.title}}</button>
+  </li>
+</ul>
+
+<app-notifications-list [feed]="response"></app-notifications-list>
+
