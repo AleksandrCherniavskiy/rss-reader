@@ -1,10 +1,9 @@
-<h2>Notification preview</h2>
 <div *ngIf="selectedNotification">
-  <h3 class="notification-title">{{selectedNotification.title}}</h3>
-  <img [src]="selectedNotification.thumbnail" alt="" width="70%">
+  <h2>Notification preview</h2>
+  <h3>{{selectedNotification.title}}</h3>
+  <img [src]="selectedNotification.thumbnail">
   <p>{{selectedNotification.description}}</p>
   <p>{{selectedNotification.pubDate}}</p>
-  <a [href]="selectedNotification.link">Go to full version</a>
- </div>
+  <a [href]="selectedNotification.link" target="_blank">Go to full version</a>
+</div>
 
-<!--<app-statistics [selectedNotification]="selectedNotification"></app-statistics>-->
