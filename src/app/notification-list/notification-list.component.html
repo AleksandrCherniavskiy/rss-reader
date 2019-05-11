@@ -1,9 +1,11 @@
 <div *ngIf="feed">
-  <h2>Notification-list</h2>
+  <h2 class="title">Notification-list</h2>
 
-  <ul>
-    <li *ngFor="let notification of feed.items">
-      <button (click)="selectedNotification = notification">{{notification.title}}</button>
-    </li>
-  </ul>
+  <div class="list-group">
+    <button *ngFor="let notification of feed.items"
+            (click)="selectedNotification = notification" class="list-group-item list-group-item-action">
+      {{notification.title}}
+    </button>
+  </div>
+
 </div>
