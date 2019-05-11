@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Channel } from '../core/models/channel';
 import { Item } from '../core/models/item';
@@ -9,15 +9,8 @@ import { Item } from '../core/models/item';
   styleUrls: ['./notification-list.component.scss']
 })
 
-export class NotificationListComponent implements OnInit {
-
+export class NotificationListComponent {
   @Input() feed: Channel;
 
   selectedNotification: Item;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
