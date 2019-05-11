@@ -3,7 +3,9 @@
 
   <div class="list-group">
     <button *ngFor="let notification of feed.items"
-            (click)="selectedNotification = notification" class="list-group-item list-group-item-action">
+            (click)="selectedNotification = notification"
+            class="list-group-item list-group-item-action"
+            [ngClass]="{'active': notification === selectedNotification}">
       {{notification.title}}
     </button>
   </div>
