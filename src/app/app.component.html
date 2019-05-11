@@ -1,8 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<app-channels></app-channels>
-<router-outlet></router-outlet>
+<app-channel-list #channelList></app-channel-list>
+<app-notification-list [feed]="channelList?.response" #notificationList></app-notification-list>
+<app-notification-preview [selectedNotification]="notificationList?.selectedNotification"></app-notification-preview>
+<app-statistics [selectedNotification]="notificationList?.selectedNotification" [feedOutput]="channelList?.response">
+</app-statistics>
