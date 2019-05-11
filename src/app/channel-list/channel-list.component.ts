@@ -13,13 +13,15 @@ export class ChannelListComponent {
 
   public response: Channel;
   private channelsList = ChannelList;
+  selectedChannel: any;
 
   constructor(private coreService: CoreService) {
   }
 
-  getFeed(url: string) {
-    this.coreService.getFeedContent(url).subscribe((response: Channel) => {
+  getFeed(channel: any) {
+    this.coreService.getFeedContent(channel.url).subscribe((response: Channel) => {
       this.response = response;
     });
+    this.selectedChannel = channel;
   }
 }

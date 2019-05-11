@@ -2,7 +2,7 @@
 
 <div class="list-group">
   <button *ngFor="let channel of channelsList" class="list-group-item list-group-item-action"
-          (click)="getFeed(channel.url)">
+          (click)="getFeed(channel)" [ngClass]="{'active': channel === selectedChannel}">
     {{channel.title}}
   </button>
 </div>
