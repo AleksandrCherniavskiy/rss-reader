@@ -1,5 +1,21 @@
-<app-channel-list #channelList></app-channel-list>
-<app-notification-list [feed]="channelList?.response" #notificationList></app-notification-list>
-<app-notification-preview [selectedNotification]="notificationList?.selectedNotification"></app-notification-preview>
-<app-statistics [selectedNotification]="notificationList?.selectedNotification" [feedOutput]="channelList?.response">
-</app-statistics>
+<div class="container">
+  <div class="row">
+    <div class="col w-50">
+      <app-channel-list #channelList></app-channel-list>
+    </div>
+    <div class="col w-50">
+      <app-notification-preview
+        [selectedNotification]="notificationList?.selectedNotification">
+      </app-notification-preview>
+    </div>
+    <div class="w-100"></div>
+    <div class="col w-50">
+      <app-notification-list [feed]="channelList?.response" #notificationList></app-notification-list>
+    </div>
+    <div class="col w-50">
+      <app-statistics [selectedNotification]="notificationList?.selectedNotification"
+                      [feedOutput]="channelList?.response">
+      </app-statistics>
+    </div>
+  </div>
+</div>
