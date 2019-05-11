@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Item } from '../core/models/item';
 
 @Component({
@@ -6,13 +6,6 @@ import { Item } from '../core/models/item';
   templateUrl: './notification-preview.component.html',
   styleUrls: ['./notification-preview.component.scss']
 })
-export class NotificationPreviewComponent implements OnInit {
-
+export class NotificationPreviewComponent {
   @Input() selectedNotification: Item;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
