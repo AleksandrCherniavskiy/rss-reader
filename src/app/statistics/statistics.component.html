@@ -1,11 +1,11 @@
-<h2>Statistics</h2>
-<p>Number of channels: {{numberOfChannels}}</p>
+<h2 class="title">Statistics</h2>
+<p class="alert alert-primary" role="alert">Number of channels: {{numberOfChannels}}</p>
 
-<div *ngIf="feedOutput">
-  <p>Number of notifications: {{feedOutput?.items?.length}}</p>
+<div *ngIf="feedOutput" class="alert alert-secondary" role="alert">
+  Number of notifications: {{feedOutput?.items?.length}}
 </div>
 
 <div *ngIf="selectedNotification">
-  <button (click)="getPieChart()">getPieChart</button>
+  <button (click)="getPieChart()" class="btn btn-primary btn-lg">Get Pie Chart</button>
 </div>
 
