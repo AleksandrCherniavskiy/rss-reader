@@ -1,9 +1,12 @@
 <div *ngIf="selectedNotification">
-  <h2>Notification preview</h2>
-  <h3>{{selectedNotification.title}}</h3>
-  <img [src]="selectedNotification.thumbnail">
-  <p>{{selectedNotification.description}}</p>
-  <p>{{selectedNotification.pubDate}}</p>
-  <a [href]="selectedNotification.link" target="_blank">Go to full version</a>
+  <h2 class="title">Notification preview</h2>
+  <div class="card">
+    <img [src]="selectedNotification.thumbnail" class="card-img-top" alt="notification-image">
+    <div class="card-body">
+      <h5 class="card-title">{{selectedNotification.title}}</h5>
+      <p class="card-text">{{selectedNotification.description}}</p>
+      <p class="card-text d-lg-inline"><small class="text-muted">{{selectedNotification.pubDate}}</small></p>
+      <a [href]="selectedNotification.link" target="_blank" class="btn btn-primary float-right">Go to full version</a>
+    </div>
+  </div>
 </div>
-
