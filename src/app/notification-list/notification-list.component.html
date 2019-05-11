@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="notification-list">
+    <h2>Notifications-list</h2>
+    <ul *ngIf="feed">
+      <li *ngFor="let notification of feed.items">
+        <button (click)="selectedNotification = notification">{{notification.title}}</button>
+      </li>
+    </ul>
+  </div>
+
+  <!--<div class="preview">
+    <app-notification-preview [selectedNotification]="selectedNotification"></app-notification-preview>
+  </div>-->
+
+</div>
