@@ -8,14 +8,14 @@
     </div>
     <div class="w-100"></div>
     <div class="col">
-      <app-statistics [selectedNotification]="notificationList?.selectedNotification"
-                      [feedOutput]="channelList?.response">
-      </app-statistics>
-    </div>
-    <div class="col">
       <app-notification-preview
         [selectedNotification]="notificationList?.selectedNotification">
       </app-notification-preview>
+    </div>
+    <div class="col">
+      <app-statistics [selectedNotification]="notificationList?.selectedNotification"
+                      [feedOutput]="channelList?.response">
+      </app-statistics>
     </div>
   </div>
 </div>
