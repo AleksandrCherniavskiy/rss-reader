@@ -5,9 +5,8 @@
   Number of notifications: {{feedOutput?.items?.length}}
 </div>
 
-<div *ngIf="selectedNotification">
-  <button (click)="getPieChart()" class="btn btn-primary btn-lg">Get Pie Chart</button>
+<div *ngIf="selectedNotification" class="centred">
+  <button (click)="getPieChart()" class="btn btn-primary btn-lg">Show Pie Chart</button>
 </div>
 
-<div id="pie-chart"></div>
-
+<div id="pie-chart" class="centred"></div>
