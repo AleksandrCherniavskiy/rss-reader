@@ -7,7 +7,6 @@ import { ChannelListComponent } from './channel-list/channel-list.component';
 import { NotificationListComponent } from './notification-list/notification-list.component';
 import { NotificationPreviewComponent } from './notification-preview/notification-preview.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { DeleteChildDirective } from './core/directives/delete-child.directive';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { DeleteChildDirective } from './core/directives/delete-child.directive';
     ChannelListComponent,
     NotificationListComponent,
     NotificationPreviewComponent,
-    StatisticsComponent,
-    DeleteChildDirective
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
