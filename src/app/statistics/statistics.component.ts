@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges } from '@angular/core';
+import {Component, OnInit, Input } from '@angular/core';
 import * as d3 from 'd3';
 
 import { ChannelList } from '../core/models/channel-list';
@@ -13,21 +13,29 @@ import { Channel } from '../core/models/channel';
 })
 export class StatisticsComponent implements OnInit {
   @Input() feedOutput: Channel;
-  @Input() selectedNotification: Item;
+  @Input('selectedNotification') set _selectedNotification(value: Item) {
+    if (!value) {
+      return;
+    }
 
-  private numberOfChannels: number;
-  private symbols: string;
-  public data;
+    this.selectedNotification = value;
+    this.getPieChart();
+  }
+
 
   width = 450;
   height = 450;
   margin = 40;
+  data;
   radius;
   svg;
   color;
   pie;
   dataReady;
   arcGenerator;
+  private selectedNotification: Item;
+  private numberOfChannels: number;
+  private symbols: string;
 
   constructor() {}
 
@@ -109,6 +117,5 @@ export class StatisticsComponent implements OnInit {
       .style('text-anchor', 'middle')
       .style('font-size', 17);
   }
-
 
 }
