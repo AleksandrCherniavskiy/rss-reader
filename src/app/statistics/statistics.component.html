@@ -5,8 +5,8 @@
   Number of notifications: {{feedOutput?.items?.length}}
 </div>
 
-<div *ngIf="selectedNotification" class="centred">
-  <button (click)="getPieChart()" class="btn btn-primary btn-lg">Show Pie Chart</button>
+<div *ngIf="selectedNotification" class="alert alert-success" role="alert">
+  Pie chart of the relative frequency of use of letters in the notification preview is bellow.
 </div>
 
 <div id="pie-chart" class="centred"></div>
