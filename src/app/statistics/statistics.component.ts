@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, OnChanges } from '@angular/core';
 import * as d3 from 'd3';
 
 import { ChannelList } from '../core/models/channel-list';
@@ -54,15 +54,13 @@ export class StatisticsComponent implements OnInit {
     }
 
     this.data = getFrequency(this.symbols);
-    console.log('data: ', getFrequency(this.symbols));
 
     this.draw();
   }
 
   draw() {
-
+    d3.select('svg').remove();
     this.radius = Math.min(this.width, this.height) / 2 - this.margin;
-
     this.svg = d3.select('#pie-chart')
     .append('svg')
     .attr('width', this.width)
@@ -89,7 +87,7 @@ export class StatisticsComponent implements OnInit {
     .enter()
     .append('path')
     .attr('d', d3.arc()
-    .innerRadius(0)         // This is the size of the donut hole
+    .innerRadius(0)
     .outerRadius(this.radius))
     .attr('fill', (d) => (this.color(d.data.key)))
     .attr('stroke', 'black')
@@ -100,7 +98,7 @@ export class StatisticsComponent implements OnInit {
     .innerRadius(0)
     .outerRadius(this.radius);
 
-    // Now add the annotation
+    // Add the annotation
     this.svg
       .selectAll('whatever')
       .data(this.dataReady)
