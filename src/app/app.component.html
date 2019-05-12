@@ -4,18 +4,18 @@
       <app-channel-list #channelList></app-channel-list>
     </div>
     <div class="col">
-      <app-notification-preview
-        [selectedNotification]="notificationList?.selectedNotification">
-      </app-notification-preview>
-    </div>
-    <div class="w-100"></div>
-    <div class="col">
       <app-notification-list [feed]="channelList?.response" #notificationList></app-notification-list>
     </div>
+    <div class="w-100"></div>
     <div class="col">
       <app-statistics [selectedNotification]="notificationList?.selectedNotification"
                       [feedOutput]="channelList?.response">
       </app-statistics>
+    </div>
+    <div class="col">
+      <app-notification-preview
+        [selectedNotification]="notificationList?.selectedNotification">
+      </app-notification-preview>
     </div>
   </div>
 </div>
