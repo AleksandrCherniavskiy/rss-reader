@@ -1,7 +1,7 @@
 <div *ngIf="feed">
   <h2 class="title">Notification-list</h2>
 
-  <div class="list-group">
+  <div class="list-group add-scroll">
     <button *ngFor="let notification of feed.items"
             (click)="selectedNotification = notification"
             class="list-group-item list-group-item-action"
