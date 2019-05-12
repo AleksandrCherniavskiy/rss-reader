@@ -1,6 +1,6 @@
 <h2 class="title">List of channels</h2>
 
-<div class="list-group">
+<div class="list-group fix-height">
   <button *ngFor="let channel of channelsList" class="list-group-item list-group-item-action"
           (click)="getFeed(channel)" [ngClass]="{'active': channel === selectedChannel}">
     {{channel.title}}
